@@ -1,6 +1,10 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wordle/constants/text.dart';
+import 'package:wordle/cubit/home_cubit.dart';
+import 'package:wordle/enums/keyboard_keys.dart';
+import 'package:wordle/enums/message_types.dart';
 
 class DataSingleton {
   static final DataSingleton _dataSingleton = DataSingleton._internal();
@@ -19,11 +23,90 @@ class DataSingleton {
       createWord();
     }
   }
-  // bool setLetter(KeyboardKeys key) {
-  //   if (KeyboardKeys.enter.name == key.name) {
-  //     return false;
-  //   }
-  // }
+
+  bool setLetter(KeyboardKeys key) {
+    if (KeyboardKeys.enter.name == key.name) {
+      return false;
+    }
+    if (gridData.length <= currentWordIndex) {
+      gridData.add("");
+    }
+    if (gridData[currentWordIndex].length < 5) {
+      gridData[currentWordIndex] = gridData[currentWordIndex] + key.name;
+      return true;
+    }
+    return false;
+  }
+
+  HomeState submitWord() {
+    if (gridData.length <= currentWordIndex) {
+      gridData.add("");
+    }
+    if (currentWordIndex < 5) {
+      if (gridData[currentWordIndex].length == 5) {
+        if (gridData[currentWordIndex] == secretWord) {
+          nextWord();
+          return WinGameState();
+        }
+        if (allWords.contains(gridData[currentWordIndex])) {
+          nextWord();
+          return GridUpdateState();
+        } else {
+          return SnackBarMessage(
+              MessageTypes.error, TextConstants.errorWrongWord);
+        }
+      } else {
+        return SnackBarMessage(
+            MessageTypes.error, TextConstants.errorWrongWordLength);
+      }
+    } else {
+      return LoseGameState();
+    }
+  }
+
+   void nextWord() {
+    final word = gridData[currentWordIndex];
+    word.split("").asMap().map((key, value) {
+      if (secretWord[key] == value) {
+        //green
+        if (coloredLetters.containsKey(value)) {
+          coloredLetters.update(value, (value) => Colors.green);
+        } else {
+          coloredLetters.addAll({value: Colors.green});
+        }
+      } else if (secretWord.contains(value)) {
+        //orange
+        if (coloredLetters.containsKey(value)) {
+          if(coloredLetters[key]==Colors.black38){
+            coloredLetters.update(value, (value) => Colors.orangeAccent);
+          }
+        } else {
+          coloredLetters.addAll({value: Colors.orangeAccent});
+        }
+      } else {
+        //grey
+        if (!coloredLetters.containsKey(value)) {
+          coloredLetters.addAll({value: Colors.black38});
+        }
+      }
+      return MapEntry(key, value);
+    });
+    if (currentWordIndex < 5) {
+      currentWordIndex++;
+    }
+  }
+
+  
+  void removeLetter() {
+    if (gridData.length <= currentWordIndex) {
+      gridData.add("");
+    }
+    int wordLength = gridData[currentWordIndex].length;
+    if (wordLength > 0) {
+      gridData[currentWordIndex] =
+          gridData[currentWordIndex].substring(0, wordLength - 1);
+    }
+  }
 
   Future<String> createWord() async {
     final words = (await rootBundle.loadString('assets/words.txt')).split("\n");
@@ -35,4 +118,19 @@ class DataSingleton {
     return secretWord;
   }
 
+  String getLetters() {
+    return gridData.join();
+  }
+
+  Color getKeyColor(KeyboardKeys myKey) {
+    return coloredLetters[myKey.name] ?? Colors.black26;
+  }
+
+  void resetData(){
+    allWords={};
+    secretWord="";
+    gridData = [""];
+    coloredLetters = {};
+    currentWordIndex = 0;
+  }
 }
