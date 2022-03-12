@@ -24,20 +24,6 @@ class DataSingleton {
     }
   }
 
-  bool setLetter(KeyboardKeys key) {
-    if (KeyboardKeys.enter.name == key.name) {
-      return false;
-    }
-    if (gridData.length <= currentWordIndex) {
-      gridData.add("");
-    }
-    if (gridData[currentWordIndex].length < 5) {
-      gridData[currentWordIndex] = gridData[currentWordIndex] + key.name;
-      return true;
-    }
-    return false;
-  }
-
   HomeState submitWord() {
     if (gridData.length <= currentWordIndex) {
       gridData.add("");
@@ -62,6 +48,20 @@ class DataSingleton {
     } else {
       return LoseGameState();
     }
+  }
+
+    bool setLetter(KeyboardKeys key) {
+    if (KeyboardKeys.enter.name == key.name) {
+      return false;
+    }
+    if (gridData.length <= currentWordIndex) {
+      gridData.add("");
+    }
+    if (gridData[currentWordIndex].length < 5) {
+      gridData[currentWordIndex] = gridData[currentWordIndex] + key.name;
+      return true;
+    }
+    return false;
   }
 
    void nextWord() {
