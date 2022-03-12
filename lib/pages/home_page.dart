@@ -63,7 +63,8 @@ class _HomePageState extends State<HomePage> {
         ],
         title: Text(
           TextConstants.gameTitle,
-          style: GoogleFonts.mulish(fontSize: 32, fontWeight: FontWeight.w800),
+          style:
+              GoogleFonts.mulish(fontSize: 32, fontWeight: FontWeight.w800),
         ),
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
