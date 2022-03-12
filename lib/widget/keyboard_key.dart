@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wordle/cubit/home_cubit.dart';
 import 'package:wordle/data/data.dart';
 import 'package:wordle/enums/keyboard_keys.dart';
+import 'package:wordle/enums/letter.dart';
 
 class KeyboardKey extends StatelessWidget {
   const KeyboardKey(
@@ -50,6 +51,86 @@ class KeyboardKey extends StatelessWidget {
           ),
         );
       },
+    );
+  } 
+}
+
+class EnterKeyboardKey extends StatelessWidget {
+  const EnterKeyboardKey({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final homeCubit = BlocProvider.of<HomeCubit>(context);
+    final data = DataSingleton();
+    return Padding(
+      padding: const EdgeInsets.all(4.0),
+      child: AspectRatio(
+        aspectRatio: 1 / 1,
+        child: InkWell(
+          onTap: () {
+            if (homeCubit.submitWord()) {
+              data.gridData[data.currentWordIndex - 1]
+                  .split("")
+                  .asMap()
+                  .map((index, e) {
+                final key =
+                    KeyboardKeys.values.firstWhere((KeyboardKeys element) {
+                  return element.name == e;
+                });
+                if (data.secretWord[index] == e) {
+                  homeCubit.updateKey(key, Letter.correctSpot);
+                  return MapEntry(index, e);
+                }
+                if (data.secretWord.contains(e)) {
+                  homeCubit.updateKey(key, Letter.wrongSpot);
+                  return MapEntry(index, e);
+                }
+                homeCubit.updateKey(key, Letter.notInWord);
+                return MapEntry(index, e);
+              });
+            }
+          },
+          child: Container(
+            decoration: BoxDecoration(
+                color: Colors.black26,
+                borderRadius: BorderRadius.circular(4.6)),
+            child: Center(
+              child: Text(
+                KeyboardKeys.enter.name.toUpperCase(),
+                style: const TextStyle(fontWeight: FontWeight.w500),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class BackspaceKeyboardKey extends StatelessWidget {
+  const BackspaceKeyboardKey({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final homeCubit = BlocProvider.of<HomeCubit>(context);
+    return Padding(
+      padding: const EdgeInsets.all(4.0),
+      child: AspectRatio(
+        aspectRatio: 1 / 1,
+        child: InkWell(
+          onTap: () {
+            homeCubit.removeLetter();
+          },
+          child: Container(
+            decoration: BoxDecoration(
+                color: Colors.black26,
+                borderRadius: BorderRadius.circular(4.6)),
+            child: const Center(
+              child: Icon(Icons.backspace_outlined),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
