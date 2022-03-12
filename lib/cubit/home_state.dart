@@ -1,10 +1,5 @@
 part of 'home_cubit.dart';
 
-import 'package:equatable/equatable.dart';
-import 'package:wordle/enums/keyboard_keys.dart';
-import 'package:wordle/enums/letter.dart';
-import 'package:wordle/enums/message_types.dart';
-
 abstract class HomeState extends Equatable {
   const HomeState();
 }

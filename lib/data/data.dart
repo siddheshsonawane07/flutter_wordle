@@ -1,7 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:wordle/enums/keyboard_keys.dart';
 
 class DataSingleton {
   static final DataSingleton _dataSingleton = DataSingleton._internal();
