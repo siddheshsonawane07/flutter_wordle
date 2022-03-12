@@ -11,14 +11,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: MaterialApp(
-          title: 'Wordle',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          debugShowCheckedModeBanner: false,
-          home: const HomePage()),
-    );
+    return MaterialApp(
+        title: 'Wordle',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        debugShowCheckedModeBanner: false,
+        home: const HomePage());
   }
 }
