@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wordle/cubit/home_cubit.dart';
-import 'package:wordle/data/data_singleton.dart';
-import 'package:wordle/enums/keyboard_keys.dart';
-import 'package:wordle/enums/letter.dart';
+
+import '../cubit/home_cubit.dart';
+import '../data/data_singleton.dart';
+import '../enums/keyboard_keys.dart';
+import '../enums/letter.dart';
 
 class KeyboardKey extends StatelessWidget {
   const KeyboardKey(
@@ -39,7 +40,7 @@ class KeyboardKey extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                     color: data.getKeyColor(keyboardKey),
-                    borderRadius: BorderRadius.circular(4.6),),
+                    borderRadius: BorderRadius.circular(4.6)),
                 child: Center(
                   child: Text(
                     keyboardKey.name.toUpperCase(),
@@ -52,7 +53,7 @@ class KeyboardKey extends StatelessWidget {
         );
       },
     );
-  } 
+  }
 }
 
 class EnterKeyboardKey extends StatelessWidget {

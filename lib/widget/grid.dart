@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wordle/constants/colors.dart';
-import 'package:wordle/cubit/home_cubit.dart';
-import 'package:wordle/data/data_singleton.dart';
+
+import '../constants/colors.dart';
+import '../cubit/home_cubit.dart';
+import '../data/data_singleton.dart';
 
 class Grid extends StatelessWidget {
   const Grid({Key? key}) : super(key: key);
