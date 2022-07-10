@@ -19,7 +19,6 @@ import '../data/data_singleton.dart';
 import '../enums/message_types.dart';
 import '../widget/home_content.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
