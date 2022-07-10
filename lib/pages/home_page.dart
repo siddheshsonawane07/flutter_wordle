@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     SchedulerBinding.instance
-        ?.addPostFrameCallback((_) => _showTimerIfNeeded());
+        .addPostFrameCallback((_) => _showTimerIfNeeded());
   }
 
   @override
