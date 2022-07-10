@@ -1,4 +1,4 @@
-# Wordle Aoo
+# Wordle App
 
 A flutter app developed for creating a wordle game with cubit state management
 
