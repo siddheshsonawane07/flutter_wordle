@@ -12,12 +12,13 @@ import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 import 'package:twemoji/twemoji.dart';
 
-import 'package:wordle/constants/colors.dart';
-import 'package:wordle/constants/text.dart';
-import 'package:wordle/cubit/home_cubit.dart';
-import 'package:wordle/data/data_singleton.dart';
-import 'package:wordle/enums/message_types.dart';
-import 'package:wordle/widget/home_content.dart';
+import '../constants/colors.dart';
+import '../constants/text.dart';
+import '../cubit/home_cubit.dart';
+import '../data/data_singleton.dart';
+import '../enums/message_types.dart';
+import '../widget/home_content.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -31,7 +32,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     SchedulerBinding.instance
-        .addPostFrameCallback((_) => _showTimerIfNeeded());
+        ?.addPostFrameCallback((_) => _showTimerIfNeeded());
   }
 
   @override
@@ -63,8 +64,7 @@ class _HomePageState extends State<HomePage> {
         ],
         title: Text(
           TextConstants.gameTitle,
-          style:
-              GoogleFonts.mulish(fontSize: 32, fontWeight: FontWeight.w800),
+          style: GoogleFonts.mulish(fontSize: 32, fontWeight: FontWeight.w800),
         ),
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
@@ -189,7 +189,7 @@ class _HomePageState extends State<HomePage> {
                 height: 50,
                 decoration: BoxDecoration(
                     color: ColorConstants.primaryOrange,
-                    borderRadius: BorderRadius.circular(12),),
+                    borderRadius: BorderRadius.circular(12)),
                 child: Center(
                   child: Text(
                     "A",
@@ -204,7 +204,7 @@ class _HomePageState extends State<HomePage> {
               Flexible(
                   child: Text(TextConstants.howToPlayRole2,
                       style: GoogleFonts.mulish(
-                          fontSize: 15, fontWeight: FontWeight.w600),),),
+                          fontSize: 15, fontWeight: FontWeight.w600))),
             ],
           ),
           const SizedBox(
@@ -233,7 +233,7 @@ class _HomePageState extends State<HomePage> {
               Flexible(
                   child: Text(TextConstants.howToPlayRole3,
                       style: GoogleFonts.mulish(
-                          fontSize: 15, fontWeight: FontWeight.w600),),),
+                          fontSize: 15, fontWeight: FontWeight.w600))),
             ],
           ),
         ],
@@ -306,7 +306,7 @@ class _HomePageState extends State<HomePage> {
                         isWin ? TextConstants.youWin : TextConstants.youLose,
                         style: GoogleFonts.mulish(
                             fontSize: 32, fontWeight: FontWeight.w700),
-                      ),),
+                      )),
                     ),
                     const SizedBox(
                       height: 20,
@@ -326,7 +326,7 @@ class _HomePageState extends State<HomePage> {
                         TextConstants.nextWordle,
                         style: GoogleFonts.mulish(
                             fontSize: 25, fontWeight: FontWeight.w700),
-                      ),),
+                      )),
                     ),
                     const SizedBox(
                       height: 16,
@@ -357,7 +357,7 @@ class _HomePageState extends State<HomePage> {
         });
   }
 
-  void _dismissTimerDialog() async {
+  void _dismissTimerDialog() async{
     await DataSingleton().createWord();
     Navigator.of(context, rootNavigator: true).pop();
   }
