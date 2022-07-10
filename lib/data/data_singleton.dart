@@ -1,10 +1,12 @@
 import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:wordle/constants/text.dart';
-import 'package:wordle/cubit/home_cubit.dart';
-import 'package:wordle/enums/keyboard_keys.dart';
-import 'package:wordle/enums/message_types.dart';
+
+import '../constants/text.dart';
+import '../cubit/home_cubit.dart';
+import '../enums/keyboard_keys.dart';
+import '../enums/message_types.dart';
 
 class DataSingleton {
   static final DataSingleton _dataSingleton = DataSingleton._internal();
@@ -18,7 +20,7 @@ class DataSingleton {
     return _dataSingleton;
   }
 
-  DataSingleton._internal() {
+  DataSingleton._internal(){
     if (secretWord.isEmpty) {
       createWord();
     }
@@ -88,7 +90,7 @@ class DataSingleton {
       } else if (secretWord.contains(value)) {
         //orange
         if (coloredLetters.containsKey(value)) {
-          if (coloredLetters[key] == Colors.black38) {
+          if(coloredLetters[key]==Colors.black38){
             coloredLetters.update(value, (value) => Colors.orangeAccent);
           }
         } else {
@@ -115,7 +117,6 @@ class DataSingleton {
     secretWord = words[index];
     allWords = words.toSet();
     return secretWord;
-    print(secretWord);
   }
 
   String getLetters() {
@@ -126,9 +127,9 @@ class DataSingleton {
     return coloredLetters[myKey.name] ?? Colors.black26;
   }
 
-  void resetData() {
-    allWords = {};
-    secretWord = "";
+  void resetData(){
+    allWords={};
+    secretWord="";
     gridData = [""];
     coloredLetters = {};
     currentWordIndex = 0;
