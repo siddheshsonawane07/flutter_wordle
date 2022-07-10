@@ -189,7 +189,7 @@ class _HomePageState extends State<HomePage> {
                 height: 50,
                 decoration: BoxDecoration(
                     color: ColorConstants.primaryOrange,
-                    borderRadius: BorderRadius.circular(12)),
+                    borderRadius: BorderRadius.circular(12),),
                 child: Center(
                   child: Text(
                     "A",
@@ -204,7 +204,7 @@ class _HomePageState extends State<HomePage> {
               Flexible(
                   child: Text(TextConstants.howToPlayRole2,
                       style: GoogleFonts.mulish(
-                          fontSize: 15, fontWeight: FontWeight.w600))),
+                          fontSize: 15, fontWeight: FontWeight.w600),),),
             ],
           ),
           const SizedBox(
@@ -233,7 +233,7 @@ class _HomePageState extends State<HomePage> {
               Flexible(
                   child: Text(TextConstants.howToPlayRole3,
                       style: GoogleFonts.mulish(
-                          fontSize: 15, fontWeight: FontWeight.w600))),
+                          fontSize: 15, fontWeight: FontWeight.w600),),),
             ],
           ),
         ],
@@ -306,7 +306,7 @@ class _HomePageState extends State<HomePage> {
                         isWin ? TextConstants.youWin : TextConstants.youLose,
                         style: GoogleFonts.mulish(
                             fontSize: 32, fontWeight: FontWeight.w700),
-                      )),
+                      ),),
                     ),
                     const SizedBox(
                       height: 20,
@@ -326,7 +326,7 @@ class _HomePageState extends State<HomePage> {
                         TextConstants.nextWordle,
                         style: GoogleFonts.mulish(
                             fontSize: 25, fontWeight: FontWeight.w700),
-                      )),
+                      ),),
                     ),
                     const SizedBox(
                       height: 16,
