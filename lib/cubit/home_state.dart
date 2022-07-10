@@ -9,20 +9,19 @@ class HomeInitial extends HomeState {
   List<Object> get props => [];
 }
 
-class GridUpdateState extends HomeState{
+class GridUpdateState extends HomeState {
   final id = DateTime.now().microsecondsSinceEpoch;
 
   @override
   List<Object> get props => [id];
 }
 
-
-class KeyboardKeyUpdateState extends HomeState{
+class KeyboardKeyUpdateState extends HomeState {
   final id = DateTime.now().microsecondsSinceEpoch;
   final KeyboardKeys key;
   final Letter letterType;
 
-  KeyboardKeyUpdateState(this.key,this.letterType);
+  KeyboardKeyUpdateState(this.key, this.letterType);
 
   @override
   List<Object> get props => [id,key,letterType];
