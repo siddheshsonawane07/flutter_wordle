@@ -39,7 +39,7 @@ class KeyboardKey extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                     color: data.getKeyColor(keyboardKey),
-                    borderRadius: BorderRadius.circular(4.6)),
+                    borderRadius: BorderRadius.circular(4.6),),
                 child: Center(
                   child: Text(
                     keyboardKey.name.toUpperCase(),
