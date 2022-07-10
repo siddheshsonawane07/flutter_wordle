@@ -64,6 +64,17 @@ class DataSingleton {
     return false;
   }
 
+  void removeLetter() {
+    if (gridData.length <= currentWordIndex) {
+      gridData.add("");
+    }
+    int wordLength = gridData[currentWordIndex].length;
+    if (wordLength > 0) {
+      gridData[currentWordIndex] =
+          gridData[currentWordIndex].substring(0, wordLength - 1);
+    }
+  }
+
    void nextWord() {
     final word = gridData[currentWordIndex];
     word.split("").asMap().map((key, value) {
@@ -96,17 +107,7 @@ class DataSingleton {
     }
   }
 
-  
-  void removeLetter() {
-    if (gridData.length <= currentWordIndex) {
-      gridData.add("");
-    }
-    int wordLength = gridData[currentWordIndex].length;
-    if (wordLength > 0) {
-      gridData[currentWordIndex] =
-          gridData[currentWordIndex].substring(0, wordLength - 1);
-    }
-  }
+
 
   Future<String> createWord() async {
     final words = (await rootBundle.loadString('assets/words.txt')).split("\n");
