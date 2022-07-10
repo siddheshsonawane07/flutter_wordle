@@ -24,6 +24,31 @@ class DataSingleton {
     }
   }
 
+  bool setLetter(KeyboardKeys key) {
+    if (KeyboardKeys.enter.name == key.name) {
+      return false;
+    }
+    if (gridData.length <= currentWordIndex) {
+      gridData.add("");
+    }
+    if (gridData[currentWordIndex].length < 5) {
+      gridData[currentWordIndex] = gridData[currentWordIndex] + key.name;
+      return true;
+    }
+    return false;
+  }
+
+  void removeLetter() {
+    if (gridData.length <= currentWordIndex) {
+      gridData.add("");
+    }
+    int wordLength = gridData[currentWordIndex].length;
+    if (wordLength > 0) {
+      gridData[currentWordIndex] =
+          gridData[currentWordIndex].substring(0, wordLength - 1);
+    }
+  }
+
   HomeState submitWord() {
     if (gridData.length <= currentWordIndex) {
       gridData.add("");
@@ -50,32 +75,7 @@ class DataSingleton {
     }
   }
 
-    bool setLetter(KeyboardKeys key) {
-    if (KeyboardKeys.enter.name == key.name) {
-      return false;
-    }
-    if (gridData.length <= currentWordIndex) {
-      gridData.add("");
-    }
-    if (gridData[currentWordIndex].length < 5) {
-      gridData[currentWordIndex] = gridData[currentWordIndex] + key.name;
-      return true;
-    }
-    return false;
-  }
-
-  void removeLetter() {
-    if (gridData.length <= currentWordIndex) {
-      gridData.add("");
-    }
-    int wordLength = gridData[currentWordIndex].length;
-    if (wordLength > 0) {
-      gridData[currentWordIndex] =
-          gridData[currentWordIndex].substring(0, wordLength - 1);
-    }
-  }
-
-   void nextWord() {
+  void nextWord() {
     final word = gridData[currentWordIndex];
     word.split("").asMap().map((key, value) {
       if (secretWord[key] == value) {
@@ -88,7 +88,7 @@ class DataSingleton {
       } else if (secretWord.contains(value)) {
         //orange
         if (coloredLetters.containsKey(value)) {
-          if(coloredLetters[key]==Colors.black38){
+          if (coloredLetters[key] == Colors.black38) {
             coloredLetters.update(value, (value) => Colors.orangeAccent);
           }
         } else {
@@ -107,8 +107,6 @@ class DataSingleton {
     }
   }
 
-
-
   Future<String> createWord() async {
     final words = (await rootBundle.loadString('assets/words.txt')).split("\n");
     var now = DateTime.now();
@@ -117,6 +115,7 @@ class DataSingleton {
     secretWord = words[index];
     allWords = words.toSet();
     return secretWord;
+    print(secretWord);
   }
 
   String getLetters() {
@@ -127,9 +126,9 @@ class DataSingleton {
     return coloredLetters[myKey.name] ?? Colors.black26;
   }
 
-  void resetData(){
-    allWords={};
-    secretWord="";
+  void resetData() {
+    allWords = {};
+    secretWord = "";
     gridData = [""];
     coloredLetters = {};
     currentWordIndex = 0;

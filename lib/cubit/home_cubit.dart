@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:wordle/data/data.dart';
+import 'package:wordle/data/data_singleton.dart';
 import 'package:wordle/enums/keyboard_keys.dart';
 import 'package:wordle/enums/letter.dart';
 import 'package:wordle/enums/message_types.dart';

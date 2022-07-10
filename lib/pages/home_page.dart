@@ -15,7 +15,7 @@ import 'package:twemoji/twemoji.dart';
 import 'package:wordle/constants/colors.dart';
 import 'package:wordle/constants/text.dart';
 import 'package:wordle/cubit/home_cubit.dart';
-import 'package:wordle/data/data.dart';
+import 'package:wordle/data/data_singleton.dart';
 import 'package:wordle/enums/message_types.dart';
 import 'package:wordle/widget/home_content.dart';
 

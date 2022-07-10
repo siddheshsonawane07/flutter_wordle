@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wordle/cubit/home_cubit.dart';
-import 'package:wordle/data/data.dart';
+import 'package:wordle/data/data_singleton.dart';
 import 'package:wordle/enums/keyboard_keys.dart';
 import 'package:wordle/enums/letter.dart';
 
