@@ -143,9 +143,11 @@ class _HomePageState extends State<HomePage> {
           Container(
             alignment: Alignment.center,
             width: double.infinity,
-            child: Text(TextConstants.howToPlayTitle,
-                style: GoogleFonts.mulish(
-                    fontSize: 32, fontWeight: FontWeight.w700)),
+            child: Text(
+              TextConstants.howToPlayTitle,
+              style:
+                  GoogleFonts.mulish(fontSize: 32, fontWeight: FontWeight.w700),
+            ),
           ),
           const SizedBox(
             height: 20,
@@ -205,9 +207,12 @@ class _HomePageState extends State<HomePage> {
                 width: 16,
               ),
               Flexible(
-                  child: Text(TextConstants.howToPlayRole2,
-                      style: GoogleFonts.mulish(
-                          fontSize: 15, fontWeight: FontWeight.w600))),
+                child: Text(
+                  TextConstants.howToPlayRole2,
+                  style: GoogleFonts.mulish(
+                      fontSize: 15, fontWeight: FontWeight.w600),
+                ),
+              ),
             ],
           ),
           const SizedBox(
@@ -234,9 +239,12 @@ class _HomePageState extends State<HomePage> {
                 width: 20,
               ),
               Flexible(
-                  child: Text(TextConstants.howToPlayRole3,
-                      style: GoogleFonts.mulish(
-                          fontSize: 15, fontWeight: FontWeight.w600))),
+                child: Text(
+                  TextConstants.howToPlayRole3,
+                  style: GoogleFonts.mulish(
+                      fontSize: 15, fontWeight: FontWeight.w600),
+                ),
+              ),
             ],
           ),
         ],
@@ -292,7 +300,9 @@ class _HomePageState extends State<HomePage> {
             filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
             child: Dialog(
               shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(24.0)),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(24.0),
+                ),
               ),
               backgroundColor: isWin
                   ? ColorConstants.primaryGreenLight

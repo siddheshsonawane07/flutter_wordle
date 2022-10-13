@@ -16,6 +16,7 @@ class Grid extends StatelessWidget {
         final data = DataSingleton();
         final letters = data.getLetters();
         return Container(
+          
           margin: const EdgeInsets.symmetric(horizontal: 30),
           child: GridView.count(
             mainAxisSpacing: 10,
