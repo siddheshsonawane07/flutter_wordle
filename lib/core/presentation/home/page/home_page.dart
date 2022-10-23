@@ -36,43 +36,45 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      appBar: AppBar(
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 50),
-            child: GestureDetector(
-                onTap: () {
-                  showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
-                          child: Dialog(
-                            shape: const RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(24.0)),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 50),
+              child: GestureDetector(
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
+                            child: Dialog(
+                              shape: const RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(24.0)),
+                              ),
+                              child: _buildDialogBody(),
                             ),
-                            child: _buildDialogBody(),
-                          ),
-                        );
-                      });
-                },
-                child: const Icon(Icons.help_outline)),
+                          );
+                        });
+                  },
+                  child: const Icon(Icons.help_outline)),
+            ),
+          ],
+          title: Text(
+            TextConstants.gameTitle,
+            style:
+                GoogleFonts.mulish(fontSize: 32, fontWeight: FontWeight.w800),
           ),
-        ],
-        title: Text(
-          TextConstants.gameTitle,
-          style:
-              GoogleFonts.mulish(fontSize: 32, fontWeight: FontWeight.w800),
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
+          centerTitle: true,
+          shadowColor: Colors.transparent,
         ),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        centerTitle: true,
-        shadowColor: Colors.transparent,
+        body: SizedBox(
+            child: _buildBody(context), height: size.height, width: size.width),
       ),
-      body: SizedBox(
-          child: _buildBody(context), height: size.height, width: size.width),
     );
   }
 
@@ -143,8 +145,8 @@ class _HomePageState extends State<HomePage> {
             width: double.infinity,
             child: Text(
               TextConstants.howToPlayTitle,
-              style: GoogleFonts.mulish(
-                  fontSize: 32, fontWeight: FontWeight.w700),
+              style:
+                  GoogleFonts.mulish(fontSize: 32, fontWeight: FontWeight.w700),
             ),
           ),
           const SizedBox(

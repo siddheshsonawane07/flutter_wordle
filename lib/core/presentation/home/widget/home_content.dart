@@ -19,7 +19,7 @@ class HomeContent extends StatelessWidget {
           Grid(),
           Spacer(),
           Keyboard(),
-          Spacer(),
+          //Spacer(),
         ],
       ),
     );
