@@ -145,8 +145,8 @@ class _HomePageState extends State<HomePage> {
             width: double.infinity,
             child: Text(
               TextConstants.howToPlayTitle,
-              style:
-                  GoogleFonts.mulish(fontSize: 32, fontWeight: FontWeight.w700),
+              style: GoogleFonts.mulish(
+                  fontSize: 32, fontWeight: FontWeight.w700),
             ),
           ),
           const SizedBox(
