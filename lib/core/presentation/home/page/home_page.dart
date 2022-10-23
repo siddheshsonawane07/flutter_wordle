@@ -36,45 +36,43 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return SingleChildScrollView(
-      child: Scaffold(
-        appBar: AppBar(
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 50),
-              child: GestureDetector(
-                  onTap: () {
-                    showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
-                            child: Dialog(
-                              shape: const RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(24.0)),
-                              ),
-                              child: _buildDialogBody(),
+    return Scaffold(
+      appBar: AppBar(
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 50),
+            child: GestureDetector(
+                onTap: () {
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
+                          child: Dialog(
+                            shape: const RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(24.0)),
                             ),
-                          );
-                        });
-                  },
-                  child: const Icon(Icons.help_outline)),
-            ),
-          ],
-          title: Text(
-            TextConstants.gameTitle,
-            style:
-                GoogleFonts.mulish(fontSize: 32, fontWeight: FontWeight.w800),
+                            child: _buildDialogBody(),
+                          ),
+                        );
+                      });
+                },
+                child: const Icon(Icons.help_outline)),
           ),
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
-          centerTitle: true,
-          shadowColor: Colors.transparent,
+        ],
+        title: Text(
+          TextConstants.gameTitle,
+          style:
+              GoogleFonts.mulish(fontSize: 32, fontWeight: FontWeight.w800),
         ),
-        body: SizedBox(
-            child: _buildBody(context), height: size.height, width: size.width),
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+        centerTitle: true,
+        shadowColor: Colors.transparent,
       ),
+      body: SizedBox(
+          child: _buildBody(context), height: size.height, width: size.width),
     );
   }
 

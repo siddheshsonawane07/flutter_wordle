@@ -8,17 +8,16 @@ class HomeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
       padding: const EdgeInsets.only(top: 10),
-      width: double.infinity,
-      height: double.infinity,
+      width: size.width,
+      height: size.height,
       color: Colors.white,
       child: Column(
         children: const [
           Grid(),
-          Spacer(
-            flex: 2,
-          ),
+          Spacer(),
           Keyboard(),
           Spacer(),
         ],
