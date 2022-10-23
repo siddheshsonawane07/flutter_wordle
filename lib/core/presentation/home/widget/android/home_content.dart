@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wordle/core/presentation/home/widget/keyboard.dart';
+import 'package:wordle/core/presentation/home/widget/android/keyboard.dart';
 
 import 'grid.dart';
 
@@ -17,9 +17,9 @@ class HomeContent extends StatelessWidget {
       child: Column(
         children: const [
           Grid(),
-          Spacer(),
+          Spacer(flex: 1),
           Keyboard(),
-          //Spacer(),
+          Spacer(flex: 1),
         ],
       ),
     );

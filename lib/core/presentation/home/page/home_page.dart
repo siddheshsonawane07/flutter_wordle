@@ -16,7 +16,7 @@ import 'package:wordle/core/const/text_constants.dart';
 import 'package:wordle/core/data/data_singleton.dart';
 import 'package:wordle/core/data/enums/message_types.dart';
 import 'package:wordle/core/presentation/home/cubit/home_cubit.dart';
-import 'package:wordle/core/presentation/home/widget/home_content.dart';
+import 'package:wordle/core/presentation/home/widget/android/home_content.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
