@@ -16,7 +16,9 @@ import 'package:wordle/core/const/text_constants.dart';
 import 'package:wordle/core/data/data_singleton.dart';
 import 'package:wordle/core/data/enums/message_types.dart';
 import 'package:wordle/core/presentation/home/cubit/home_cubit.dart';
-import 'package:wordle/core/presentation/home/widget/android/home_content.dart';
+import 'package:wordle/responsive/mobile_screen_layout.dart';
+import 'package:wordle/responsive/responsive.dart';
+import 'package:wordle/responsive/web_screen_layout.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -96,8 +98,10 @@ class _HomePageState extends State<HomePage> {
         },
         buildWhen: (_, currState) => currState is HomeInitial,
         builder: (context, state) {
-          return HomeContent(
+          return ResponsiveLayout(
             key: UniqueKey(),
+            mobileScreenLayout: const MobileScreenLayout(),
+            webScreenLayout: const WebScreenLayout(),
           );
         },
       ),
