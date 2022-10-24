@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,14 +10,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 import 'package:twemoji/twemoji.dart';
-import 'package:wordle/core/const/color_constants.dart';
-import 'package:wordle/core/const/text_constants.dart';
-import 'package:wordle/core/data/data_singleton.dart';
-import 'package:wordle/core/data/enums/message_types.dart';
-import 'package:wordle/core/presentation/home/cubit/home_cubit.dart';
-import 'package:wordle/responsive/mobile_screen_layout.dart';
-import 'package:wordle/responsive/responsive.dart';
-import 'package:wordle/responsive/web_screen_layout.dart';
+import '../../../../responsive/mobile_screen_layout.dart';
+import '../../../../responsive/responsive.dart';
+import '../../../../responsive/web_screen_layout.dart';
+import '../../../const/color_constants.dart';
+import '../../../const/text_constants.dart';
+import '../../../data/data_singleton.dart';
+import '../../../data/enums/message_types.dart';
+import '../cubit/home_cubit.dart';
+import '../widget/developer_info.dart';
+import '../widget/game_help.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -41,6 +42,7 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          leading: developerinfo(context),
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 50),
@@ -56,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(24.0)),
                               ),
-                              child: _buildDialogBody(),
+                              child: gamehelp(),
                             ),
                           );
                         });
@@ -135,125 +137,6 @@ class _HomePageState extends State<HomePage> {
         );
         break;
     }
-  }
-
-  _buildDialogBody() {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 36, horizontal: 20),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(50)),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            alignment: Alignment.center,
-            width: double.infinity,
-            child: Text(
-              TextConstants.howToPlayTitle,
-              style:
-                  GoogleFonts.mulish(fontSize: 32, fontWeight: FontWeight.w700),
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Text(TextConstants.howToPlayText,
-              style: GoogleFonts.mulish(
-                  fontSize: 15, fontWeight: FontWeight.w600)),
-          const SizedBox(
-            height: 20,
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                    color: ColorConstants.primaryGreyLight,
-                    borderRadius: BorderRadius.circular(12)),
-                child: Center(
-                  child: Text(
-                    "A",
-                    style: GoogleFonts.mulish(
-                        fontSize: 26, fontWeight: FontWeight.w600),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                width: 16,
-              ),
-              Text(TextConstants.howToPlayRole1,
-                  style: GoogleFonts.mulish(
-                      fontSize: 15, fontWeight: FontWeight.w600)),
-            ],
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                    color: ColorConstants.primaryOrange,
-                    borderRadius: BorderRadius.circular(12)),
-                child: Center(
-                  child: Text(
-                    "A",
-                    style: GoogleFonts.mulish(
-                        fontSize: 26, fontWeight: FontWeight.w600),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                width: 16,
-              ),
-              Flexible(
-                child: Text(
-                  TextConstants.howToPlayRole2,
-                  style: GoogleFonts.mulish(
-                      fontSize: 15, fontWeight: FontWeight.w600),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                    color: ColorConstants.primaryGreen,
-                    borderRadius: BorderRadius.circular(12)),
-                child: Center(
-                  child: Text(
-                    "A",
-                    style: GoogleFonts.mulish(
-                        fontSize: 26, fontWeight: FontWeight.w600),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              Flexible(
-                child: Text(
-                  TextConstants.howToPlayRole3,
-                  style: GoogleFonts.mulish(
-                      fontSize: 15, fontWeight: FontWeight.w600),
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
   }
 
   void _showTimerIfNeeded() async {
