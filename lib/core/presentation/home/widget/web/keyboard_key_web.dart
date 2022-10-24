@@ -35,7 +35,7 @@ class KeyboardKeyWeb extends StatelessWidget {
               homeCubit.setLetter(keyboardKey);
             },
             child: AspectRatio(
-              aspectRatio: 2,
+              aspectRatio: 2.5,
               child: Container(
                 decoration: BoxDecoration(
                     color: data.getKeyColor(keyboardKey),
@@ -65,7 +65,7 @@ class EnterKeyboardKeyWeb extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: AspectRatio(
-        aspectRatio: 2,
+        aspectRatio: 3.3,
         child: InkWell(
           onTap: () {
             if (homeCubit.submitWord()) {
@@ -116,7 +116,7 @@ class BackspaceKeyboardKeyWeb extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: AspectRatio(
-        aspectRatio: 2,
+        aspectRatio: 3.3,
         child: InkWell(
           onTap: () {
             homeCubit.removeLetter();

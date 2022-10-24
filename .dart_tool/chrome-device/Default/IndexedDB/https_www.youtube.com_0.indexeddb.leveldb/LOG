@@ -1,3 +1,7 @@
-2022/10/24-01:30:27.071 16b0 Reusing MANIFEST C:\Users\HP\AppData\Local\Temp\flutter_tools.5b5faeb6\flutter_tools_chrome_device.7e3dec58\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
-2022/10/24-01:30:27.071 16b0 Recovering log #3
-2022/10/24-01:30:27.072 16b0 Reusing old log C:\Users\HP\AppData\Local\Temp\flutter_tools.5b5faeb6\flutter_tools_chrome_device.7e3dec58\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb/000003.log 
+2022/10/24-16:39:16.396 1dc8 Reusing MANIFEST C:\Users\HP\AppData\Local\Temp\flutter_tools.e0214b43\flutter_tools_chrome_device.e59ac89e\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/10/24-16:39:16.396 1dc8 Recovering log #3
+2022/10/24-16:39:16.397 1dc8 Reusing old log C:\Users\HP\AppData\Local\Temp\flutter_tools.e0214b43\flutter_tools_chrome_device.e59ac89e\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb/000003.log 
+2022/10/24-16:39:18.534 22d4 Level-0 table #5: started
+2022/10/24-16:39:18.539 22d4 Level-0 table #5: 12867 bytes OK
+2022/10/24-16:39:18.542 22d4 Delete type=0 #3
+2022/10/24-16:39:18.543 22d4 Manual compaction at level-0 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)

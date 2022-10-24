@@ -23,7 +23,7 @@ class GridWeb extends StatelessWidget {
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             crossAxisCount: 5,
-            childAspectRatio: 4,
+            childAspectRatio: 4.5,
             children: List.generate(30, (index) {
               final letter = letters.length > index ? letters[index] : "";
               Color color = ColorConstants.primaryGreyLight;
