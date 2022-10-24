@@ -5,8 +5,8 @@ import 'package:wordle/core/data/enums/keyboard_keys.dart';
 import 'package:wordle/core/data/enums/letter.dart';
 import 'package:wordle/core/presentation/home/cubit/home_cubit.dart';
 
-class KeyboardKey extends StatelessWidget {
-  const KeyboardKey(
+class KeyboardKeyWeb extends StatelessWidget {
+  const KeyboardKeyWeb(
       {Key? key, this.color = Colors.black26, required this.keyboardKey})
       : super(key: key);
 
@@ -55,8 +55,8 @@ class KeyboardKey extends StatelessWidget {
   }
 }
 
-class EnterKeyboardKey extends StatelessWidget {
-  const EnterKeyboardKey({Key? key}) : super(key: key);
+class EnterKeyboardKeyWeb extends StatelessWidget {
+  const EnterKeyboardKeyWeb({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -107,8 +107,8 @@ class EnterKeyboardKey extends StatelessWidget {
   }
 }
 
-class BackspaceKeyboardKey extends StatelessWidget {
-  const BackspaceKeyboardKey({Key? key}) : super(key: key);
+class BackspaceKeyboardKeyWeb extends StatelessWidget {
+  const BackspaceKeyboardKeyWeb({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

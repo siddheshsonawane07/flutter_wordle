@@ -5,8 +5,8 @@ import 'package:wordle/core/const/color_constants.dart';
 import 'package:wordle/core/data/data_singleton.dart';
 import 'package:wordle/core/presentation/home/cubit/home_cubit.dart';
 
-class Grid extends StatelessWidget {
-  const Grid({Key? key}) : super(key: key);
+class GridWeb extends StatelessWidget {
+  const GridWeb({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:wordle/core/data/enums/keyboard_keys.dart';
+import 'package:wordle/core/presentation/home/widget/web/keyboard_key_web.dart';
 
-import '../android/keyboard_key.dart';
-
-class Keyboard extends StatelessWidget {
-  const Keyboard({Key? key}) : super(key: key);
+class KeyboardWeb extends StatelessWidget {
+  const KeyboardWeb({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,27 +16,27 @@ class Keyboard extends StatelessWidget {
             children: const [
               Flexible(
                   flex: 1,
-                  child: KeyboardKey(
+                  child: KeyboardKeyWeb(
                     keyboardKey: KeyboardKeys.q,
                   )),
               Flexible(
-                  flex: 1, child: KeyboardKey(keyboardKey: KeyboardKeys.w)),
+                  flex: 1, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.w)),
               Flexible(
-                  flex: 1, child: KeyboardKey(keyboardKey: KeyboardKeys.e)),
+                  flex: 1, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.e)),
               Flexible(
-                  flex: 1, child: KeyboardKey(keyboardKey: KeyboardKeys.r)),
+                  flex: 1, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.r)),
               Flexible(
-                  flex: 1, child: KeyboardKey(keyboardKey: KeyboardKeys.t)),
+                  flex: 1, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.t)),
               Flexible(
-                  flex: 1, child: KeyboardKey(keyboardKey: KeyboardKeys.y)),
+                  flex: 1, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.y)),
               Flexible(
-                  flex: 1, child: KeyboardKey(keyboardKey: KeyboardKeys.u)),
+                  flex: 1, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.u)),
               Flexible(
-                  flex: 1, child: KeyboardKey(keyboardKey: KeyboardKeys.i)),
+                  flex: 1, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.i)),
               Flexible(
-                  flex: 1, child: KeyboardKey(keyboardKey: KeyboardKeys.o)),
+                  flex: 1, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.o)),
               Flexible(
-                  flex: 1, child: KeyboardKey(keyboardKey: KeyboardKeys.p)),
+                  flex: 1, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.p)),
             ],
           ),
           Row(
@@ -47,25 +46,25 @@ class Keyboard extends StatelessWidget {
               ),
               Flexible(
                   flex: 10,
-                  child: KeyboardKey(
+                  child: KeyboardKeyWeb(
                     keyboardKey: KeyboardKeys.a,
                   )),
               Flexible(
-                  flex: 10, child: KeyboardKey(keyboardKey: KeyboardKeys.s)),
+                  flex: 10, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.s)),
               Flexible(
-                  flex: 10, child: KeyboardKey(keyboardKey: KeyboardKeys.d)),
+                  flex: 10, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.d)),
               Flexible(
-                  flex: 10, child: KeyboardKey(keyboardKey: KeyboardKeys.f)),
+                  flex: 10, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.f)),
               Flexible(
-                  flex: 10, child: KeyboardKey(keyboardKey: KeyboardKeys.g)),
+                  flex: 10, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.g)),
               Flexible(
-                  flex: 10, child: KeyboardKey(keyboardKey: KeyboardKeys.h)),
+                  flex: 10, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.h)),
               Flexible(
-                  flex: 10, child: KeyboardKey(keyboardKey: KeyboardKeys.j)),
+                  flex: 10, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.j)),
               Flexible(
-                  flex: 10, child: KeyboardKey(keyboardKey: KeyboardKeys.k)),
+                  flex: 10, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.k)),
               Flexible(
-                  flex: 10, child: KeyboardKey(keyboardKey: KeyboardKeys.l)),
+                  flex: 10, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.l)),
               Spacer(
                 flex: 5,
               ),
@@ -73,22 +72,22 @@ class Keyboard extends StatelessWidget {
           ),
           Row(
             children: const [
-              Flexible(flex: 14, child: EnterKeyboardKey()),
+              Flexible(flex: 14, child: EnterKeyboardKeyWeb()),
               Flexible(
-                  flex: 10, child: KeyboardKey(keyboardKey: KeyboardKeys.z)),
+                  flex: 10, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.z)),
               Flexible(
-                  flex: 10, child: KeyboardKey(keyboardKey: KeyboardKeys.x)),
+                  flex: 10, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.x)),
               Flexible(
-                  flex: 10, child: KeyboardKey(keyboardKey: KeyboardKeys.c)),
+                  flex: 10, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.c)),
               Flexible(
-                  flex: 10, child: KeyboardKey(keyboardKey: KeyboardKeys.v)),
+                  flex: 10, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.v)),
               Flexible(
-                  flex: 10, child: KeyboardKey(keyboardKey: KeyboardKeys.b)),
+                  flex: 10, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.b)),
               Flexible(
-                  flex: 10, child: KeyboardKey(keyboardKey: KeyboardKeys.n)),
+                  flex: 10, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.n)),
               Flexible(
-                  flex: 10, child: KeyboardKey(keyboardKey: KeyboardKeys.m)),
-              Flexible(flex: 14, child: BackspaceKeyboardKey()),
+                  flex: 10, child: KeyboardKeyWeb(keyboardKey: KeyboardKeys.m)),
+              Flexible(flex: 14, child: BackspaceKeyboardKeyWeb()),
             ],
           ),
         ],
