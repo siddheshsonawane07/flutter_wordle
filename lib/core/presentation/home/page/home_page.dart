@@ -42,28 +42,51 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          leading: developerinfo(context),
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 50),
+            child: GestureDetector(
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
+                      child: Dialog(
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(24.0)),
+                        ),
+                        child: developerinfo(context),
+                      ),
+                    );
+                  },
+                );
+              },
+              child: const Icon(Icons.info_outline),
+            ),
+          ),
           actions: [
-            Padding(
+            Container(
               padding: const EdgeInsets.only(right: 50),
               child: GestureDetector(
-                  onTap: () {
-                    showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
-                            child: Dialog(
-                              shape: const RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(24.0)),
-                              ),
-                              child: gamehelp(),
-                            ),
-                          );
-                        });
-                  },
-                  child: const Icon(Icons.help_outline)),
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
+                        child: Dialog(
+                          shape: const RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(24.0)),
+                          ),
+                          child: gamehelp(),
+                        ),
+                      );
+                    },
+                  );
+                },
+                child: const Icon(Icons.help_outline),
+              ),
             ),
           ],
           title: Text(

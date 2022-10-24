@@ -13,5 +13,12 @@ class TextConstants {
   static const String howToPlayRole3 = "In the word and in the correct spot";
   static const String nextWordle = "Next Wordle in ";
   static const String wordle1 = "What is WORDLE ?";
+  static const String wordle2 =
+      "Wordle is a daily word game which is originally developed by Josh Wardle.\n"
+      "It's fun, simple and, like a crossword, can only be played once a day.\n"
+      "Every 24 hours there's a new word of the day, and it's up to you to figure out what it is.\n";
+  static const String info1 = "About Us";
+  static const String info2 = "Developed By";
+  static const String info3 = "Siddhesh Sonawane";
   static const webScreenSize = 412;
 }
