@@ -16,7 +16,6 @@ class Grid extends StatelessWidget {
         final data = DataSingleton();
         final letters = data.getLetters();
         return Container(
-          
           margin: const EdgeInsets.symmetric(horizontal: 30),
           child: GridView.count(
             mainAxisSpacing: 10,
@@ -24,6 +23,7 @@ class Grid extends StatelessWidget {
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             crossAxisCount: 5,
+            childAspectRatio: 1,
             children: List.generate(30, (index) {
               final letter = letters.length > index ? letters[index] : "";
               Color color = ColorConstants.primaryGreyLight;
@@ -31,8 +31,8 @@ class Grid extends StatelessWidget {
                   data.currentWordIndex > 0 &&
                   index < 5 * data.currentWordIndex) {
                 final indexInRow = index % 5;
-                if(data.gridData.join().contains(letter)){
-                  color=ColorConstants.primaryGreyMedium;
+                if (data.gridData.join().contains(letter)) {
+                  color = ColorConstants.primaryGreyMedium;
                 }
                 if (data.secretWord.contains(letter)) {
                   color = ColorConstants.primaryOrange;
