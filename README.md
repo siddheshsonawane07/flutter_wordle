@@ -13,3 +13,6 @@ Video Demonstration of the project
 
 
 https://user-images.githubusercontent.com/73132959/179288581-649d5586-f0c2-4b91-aeb8-fcef494870af.mp4
+
+APK File: https://drive.google.com/file/d/1OaTIZc_A4bJ_gdTKer-XXuu08YlsszfM/view?usp=sharing
+Website deployed: https://wordle-ss.netlify.app
