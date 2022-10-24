@@ -13,5 +13,5 @@ class TextConstants {
   static const String howToPlayRole2 = "In the word but in the wrong spot";
   static const String howToPlayRole3 = "In the word and in the correct spot";
   static const String nextWordle = "NEXT WORDLE";
-  static const webScreenSize = 600;
+  static const webScreenSize = 412;
 }

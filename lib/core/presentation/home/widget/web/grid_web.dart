@@ -16,14 +16,14 @@ class GridWeb extends StatelessWidget {
         final data = DataSingleton();
         final letters = data.getLetters();
         return Container(
-          
-          margin: const EdgeInsets.symmetric(horizontal: 30),
+          margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
           child: GridView.count(
             mainAxisSpacing: 10,
             crossAxisSpacing: 10,
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             crossAxisCount: 5,
+            childAspectRatio: 4,
             children: List.generate(30, (index) {
               final letter = letters.length > index ? letters[index] : "";
               Color color = ColorConstants.primaryGreyLight;
@@ -31,8 +31,8 @@ class GridWeb extends StatelessWidget {
                   data.currentWordIndex > 0 &&
                   index < 5 * data.currentWordIndex) {
                 final indexInRow = index % 5;
-                if(data.gridData.join().contains(letter)){
-                  color=ColorConstants.primaryGreyMedium;
+                if (data.gridData.join().contains(letter)) {
+                  color = ColorConstants.primaryGreyMedium;
                 }
                 if (data.secretWord.contains(letter)) {
                   color = ColorConstants.primaryOrange;
@@ -52,7 +52,7 @@ class GridWeb extends StatelessWidget {
                 child: Text(
                   letter.toUpperCase(),
                   style: GoogleFonts.mulish(
-                      fontWeight: FontWeight.w600, fontSize: 30),
+                      fontWeight: FontWeight.w600, fontSize: 20),
                 ),
               );
             }),

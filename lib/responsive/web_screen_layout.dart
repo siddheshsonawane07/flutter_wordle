@@ -16,9 +16,9 @@ class WebScreenLayout extends StatelessWidget {
       child: Column(
         children: const [
           GridWeb(),
-          Spacer(flex: 1),
+          // Spacer(flex: 1),
           KeyboardWeb(),
-          Spacer(flex: 1),
+          // Spacer(flex: 1),
           //Text("Web Screen Layout")
         ],
       ),

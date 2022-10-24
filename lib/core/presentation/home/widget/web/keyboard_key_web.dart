@@ -29,13 +29,13 @@ class KeyboardKeyWeb extends StatelessWidget {
       builder: (context, currentState) {
         final data = DataSingleton();
         return Padding(
-          padding: const EdgeInsets.all(4.0),
+          padding: const EdgeInsets.all(3.0),
           child: InkWell(
             onTap: () {
               homeCubit.setLetter(keyboardKey);
             },
             child: AspectRatio(
-              aspectRatio: 2 / 3,
+              aspectRatio: 2,
               child: Container(
                 decoration: BoxDecoration(
                     color: data.getKeyColor(keyboardKey),
@@ -43,7 +43,7 @@ class KeyboardKeyWeb extends StatelessWidget {
                 child: Center(
                   child: Text(
                     keyboardKey.name.toUpperCase(),
-                    style: const TextStyle(fontWeight: FontWeight.w500),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
@@ -65,7 +65,7 @@ class EnterKeyboardKeyWeb extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: AspectRatio(
-        aspectRatio: 1 / 1,
+        aspectRatio: 2,
         child: InkWell(
           onTap: () {
             if (homeCubit.submitWord()) {
@@ -116,7 +116,7 @@ class BackspaceKeyboardKeyWeb extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: AspectRatio(
-        aspectRatio: 1 / 1,
+        aspectRatio: 2,
         child: InkWell(
           onTap: () {
             homeCubit.removeLetter();
