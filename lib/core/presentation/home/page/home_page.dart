@@ -42,8 +42,8 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          leading: Padding(
-            padding: const EdgeInsets.only(left: 50),
+          leading: Container(
+            padding: const EdgeInsets.only(left: 30),
             child: GestureDetector(
               onTap: () {
                 showDialog(
@@ -55,18 +55,18 @@ class _HomePageState extends State<HomePage> {
                         shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(24.0)),
                         ),
-                        child: developerinfo(context),
+                        child: gamehelp(),
                       ),
                     );
                   },
                 );
               },
-              child: const Icon(Icons.info_outline),
+              child: const Icon(Icons.help_outline),
             ),
           ),
           actions: [
             Container(
-              padding: const EdgeInsets.only(right: 50),
+              padding: const EdgeInsets.only(right: 30),
               child: GestureDetector(
                 onTap: () {
                   showDialog(
@@ -79,13 +79,13 @@ class _HomePageState extends State<HomePage> {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(24.0)),
                           ),
-                          child: gamehelp(),
+                          child: developerinfo(context),
                         ),
                       );
                     },
                   );
                 },
-                child: const Icon(Icons.help_outline),
+                child: const Icon(Icons.info_outline),
               ),
             ),
           ],
