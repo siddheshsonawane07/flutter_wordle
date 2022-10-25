@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -68,7 +67,7 @@ developerinfo(BuildContext context) {
               Link(
                   uri: Uri.parse(
                       "https://www.linkedin.com/in/siddheshsonawane07"),
-                  target: kIsWeb ? LinkTarget.blank : LinkTarget.self,
+                  target: LinkTarget.blank,
                   builder: (context, followLink) {
                     return GestureDetector(
                         onTap: followLink,
@@ -76,7 +75,7 @@ developerinfo(BuildContext context) {
                   }),
               Link(
                   uri: Uri.parse("https://twitter.com/SiddheshSonawa8"),
-                  target: kIsWeb ? LinkTarget.blank : LinkTarget.self,
+                  target: LinkTarget.blank,
                   builder: (context, followLink) {
                     return GestureDetector(
                         onTap: followLink,
@@ -84,7 +83,7 @@ developerinfo(BuildContext context) {
                   }),
               Link(
                   uri: Uri.parse("https://www.instagram.com/_siddhesh___07/"),
-                  target: kIsWeb ? LinkTarget.blank : LinkTarget.self,
+                  target: LinkTarget.blank,
                   builder: (context, followLink) {
                     return GestureDetector(
                         onTap: followLink,
@@ -92,7 +91,7 @@ developerinfo(BuildContext context) {
                   }),
               Link(
                   uri: Uri.parse("https://github.com/siddheshsonawane07"),
-                  target: kIsWeb ? LinkTarget.blank : LinkTarget.self,
+                  target: LinkTarget.blank,
                   builder: (context, followLink) {
                     return GestureDetector(
                         onTap: followLink,

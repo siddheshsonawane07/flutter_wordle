@@ -20,5 +20,5 @@ class TextConstants {
   static const String info1 = "About Us";
   static const String info2 = "Developed By";
   static const String info3 = "Siddhesh Sonawane";
-  static const webScreenSize = 420;
+  static const webScreenSize = 430;
 }
