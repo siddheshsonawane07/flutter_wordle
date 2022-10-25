@@ -72,7 +72,7 @@ developerinfo(BuildContext context) {
                   builder: (context, followLink) {
                     return GestureDetector(
                         onTap: followLink,
-                        child: SvgPicture.asset('svg/linkedin.svg'));
+                        child: SvgPicture.asset('assets/svg/linkedin.svg'));
                   }),
               Link(
                   uri: Uri.parse("https://twitter.com/SiddheshSonawa8"),
@@ -80,7 +80,7 @@ developerinfo(BuildContext context) {
                   builder: (context, followLink) {
                     return GestureDetector(
                         onTap: followLink,
-                        child: SvgPicture.asset('svg/twitter.svg'));
+                        child: SvgPicture.asset('assets/svg/twitter.svg'));
                   }),
               Link(
                   uri: Uri.parse("https://www.instagram.com/_siddhesh___07/"),
@@ -88,7 +88,7 @@ developerinfo(BuildContext context) {
                   builder: (context, followLink) {
                     return GestureDetector(
                         onTap: followLink,
-                        child: SvgPicture.asset('svg/instagram.svg'));
+                        child: SvgPicture.asset('assets/svg/instagram.svg'));
                   }),
               Link(
                   uri: Uri.parse("https://github.com/siddheshsonawane07"),
@@ -96,7 +96,7 @@ developerinfo(BuildContext context) {
                   builder: (context, followLink) {
                     return GestureDetector(
                         onTap: followLink,
-                        child: SvgPicture.asset('svg/github.svg'));
+                        child: SvgPicture.asset('assets/svg/github.svg'));
                   }),
             ],
           ),

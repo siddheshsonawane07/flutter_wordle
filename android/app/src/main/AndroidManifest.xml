@@ -24,18 +24,16 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-            <queries>
             <!-- If your app checks for SMS support -->
-            <intent>
+            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <data android:scheme="sms" />
-            </intent>
+            </intent-filter>
             <!-- If your app checks for call support -->
-            <intent>
+            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <data android:scheme="tel" />
-            </intent>
-            </queries>
+            </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
