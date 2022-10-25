@@ -1,10 +1,13 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import '../../../const/text_constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/link.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import '../../../const/text_constants.dart';
 
 developerinfo(BuildContext context) {
-  Size size = MediaQuery.of(context).size;
   return SingleChildScrollView(
     child: Container(
       padding: const EdgeInsets.symmetric(vertical: 36, horizontal: 20),
@@ -62,23 +65,40 @@ developerinfo(BuildContext context) {
           const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children:  [
-              GestureDetector(
-                onTap: () {},
-                child: SvgPicture.asset('svg/linkedin.svg'),
-              ),
-              GestureDetector(
-                onTap: () {},
-                child: SvgPicture.asset('svg/twitter.svg'),
-              ),
-              GestureDetector(
-                onTap: () {},
-                child: SvgPicture.asset('svg/instagram.svg'),
-              ),
-              GestureDetector(
-                onTap: () {},
-                child: SvgPicture.asset('svg/github.svg'),
-              ),
+            children: [
+              Link(
+                  uri: Uri.parse(
+                      "https://www.linkedin.com/in/siddheshsonawane07"),
+                  target: kIsWeb ? LinkTarget.blank : LinkTarget.self,
+                  builder: (context, followLink) {
+                    return GestureDetector(
+                        onTap: followLink,
+                        child: SvgPicture.asset('svg/linkedin.svg'));
+                  }),
+              Link(
+                  uri: Uri.parse("https://twitter.com/SiddheshSonawa8"),
+                  target: kIsWeb ? LinkTarget.blank : LinkTarget.self,
+                  builder: (context, followLink) {
+                    return GestureDetector(
+                        onTap: followLink,
+                        child: SvgPicture.asset('svg/twitter.svg'));
+                  }),
+              Link(
+                  uri: Uri.parse("https://www.instagram.com/_siddhesh___07/"),
+                  target: kIsWeb ? LinkTarget.blank : LinkTarget.self,
+                  builder: (context, followLink) {
+                    return GestureDetector(
+                        onTap: followLink,
+                        child: SvgPicture.asset('svg/instagram.svg'));
+                  }),
+              Link(
+                  uri: Uri.parse("https://github.com/siddheshsonawane07"),
+                  target: kIsWeb ? LinkTarget.blank : LinkTarget.self,
+                  builder: (context, followLink) {
+                    return GestureDetector(
+                        onTap: followLink,
+                        child: SvgPicture.asset('svg/github.svg'));
+                  }),
             ],
           ),
         ],
