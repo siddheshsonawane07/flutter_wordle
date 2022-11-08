@@ -15,18 +15,30 @@ dependencies:
   flutter_countdown_timer: ^4.1.0
   flutter_svg: ^1.0.3
   google_fonts: ^2.2.0
+  rename: ^2.0.1
   shared_preferences: ^2.0.12
   top_snackbar_flutter: ^1.0.2
   twemoji: ^0.4.2
   url_launcher: ^6.1.6
 
 dev_dependencies:
+  flutter_launcher_icons: "^0.10.0"
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: true
+  image_path: "assets/W.png"
+  web:
+    generate: true
+    image_path: "assets/W.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
 
 flutter:
   uses-material-design: true
   assets:
     - assets/words.txt
     - assets/svg/
+    - assets/W.png
