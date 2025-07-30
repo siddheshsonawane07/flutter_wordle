@@ -16,5 +16,3 @@ https://user-images.githubusercontent.com/73132959/179288581-649d5586-f0c2-4b91-
 
 APK File: https://drive.google.com/file/d/1oUYVaa-4768JqOT6HOXdR2f4bOeaHlO5/view?usp=sharing
 
-
-Website deployed: https://wordle-ss.netlify.app/
